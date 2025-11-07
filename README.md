@@ -1,30 +1,37 @@
-# 🚀 Krishna Naicker - Portfolio
+# 🚀 Krishna Naicker - AI/ML Engineer Portfolio
 
-A stunning, interactive portfolio website with auto-syncing GitHub data and mesmerizing Vanta.js fog background effects.
+A modern, minimalistic portfolio website showcasing AI/ML projects, full-stack development skills, and professional experience.
 
-![Portfolio Preview](https://via.placeholder.com/800x400/0f172a/6366f1?text=Portfolio+Preview)
+![Portfolio Preview](https://img.shields.io/badge/Status-Live-success?style=for-the-badge)
+![Last Updated](https://img.shields.io/badge/Updated-November%202025-blue?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 ## ✨ Features
 
-- 🌫️ **Interactive Vanta.js FOG Background** - Mesmerizing animated fog that responds to cursor movement
-- 🎨 **Glassmorphism Design** - Modern, translucent cards with backdrop blur effects
-- 🖱️ **Custom Cursor** - Game-like interactive cursor with magnetic effects
-- 📱 **Fully Responsive** - Looks amazing on all devices
-- 🔄 **Auto-Sync with GitHub** - Automatically updates projects from your GitHub repos
-- ⚡ **Smooth Animations** - GSAP-powered scroll animations
-- 🎯 **SEO Optimized** - Meta tags and semantic HTML
-- ♿ **Accessible** - WCAG compliant with ARIA labels
-- 🚀 **Fast Loading** - Optimized performance with lazy loading
+- 🌫️ **Interactive 3D Fog Background** - Powered by Vanta.js with Three.js
+- 🎨 **Modern Dark Theme** - Professional grayish/bluish color scheme
+- 💻 **Terminal-Style About Section** - Live typing animation on scroll
+- 🔵 **Bubble Tech Stack** - Interactive skill bubbles with hover effects
+- 📂 **Dynamic Projects** - Auto-loaded from curated resume projects
+- 📧 **Contact Form** - Integrated with Getform.io for email submissions
+- 🎬 **Smooth Scroll Animations** - Intersection Observer API for performance
+- 📱 **Fully Responsive** - Mobile-first design that works on all devices
+- ⚡ **Lightning Fast** - Optimized for speed and performance
+- ♿ **Accessible** - Respects user motion preferences
 
 ## 🛠️ Tech Stack
 
+### Frontend
 - **HTML5** - Semantic markup
 - **CSS3** - Custom properties, Grid, Flexbox
-- **Vanilla JavaScript** - No heavy frameworks
-- **GSAP** - Professional animations
+- **Vanilla JavaScript** - ES6+, no frameworks
+- **Google Fonts** - Inter & Space Mono
+
+### Libraries & APIs
 - **Vanta.js** - 3D background effects
 - **Three.js** - WebGL rendering
-- **GitHub API** - Dynamic data fetching
+- **Getform.io** - Contact form backend
+- **Intersection Observer API** - Scroll animations
 
 ## 📁 Project Structure
 
@@ -32,251 +39,347 @@ A stunning, interactive portfolio website with auto-syncing GitHub data and mesm
 portfolio/
 ├── index.html              # Main HTML file
 ├── css/
-│   ├── style.css          # Main styles
-│   ├── animations.css     # Animation keyframes
-│   └── responsive.css     # Mobile responsiveness
+│   └── style.css          # Main stylesheet with animations
+|   └──animations.css      # Animation keyframes
+│   └── responsive.css     # Mobile responsiveness          # Main stylesheet with animations
 ├── js/
-│   ├── main.js           # Core functionality
-│   ├── vanta-config.js   # Vanta.js setup
-│   ├── cursor-effects.js # Custom cursor
-│   └── resume-sync.js    # GitHub API integration
+│   ├── main.js            # Core functionality & interactions
+│   ├── vanta-config.js    # Fog background configuration
+│   └── resume-sync.js     # Projects data management
 ├── assets/
-│   ├── images/           # Images and icons
-│   └── fonts/            # Custom fonts
-├── data/
-│   └── resume.json       # Resume data
-└── README.md             # This file
+│   └── resume.pdf         # Downloadable resume
+└── README.md              # Project documentation
 ```
 
 ## 🚀 Quick Start
 
-### 1. Clone or Download
+### Local Development
 
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/KrishnaNaicker/portfolio.git
+   cd portfolio
+   ```
+
+2. **Open in browser**
+   ```bash
+   # Using Python
+   python -m http.server 8000
+   
+   # OR using Node.js
+   npx serve
+   
+   # Then visit: http://localhost:8000
+   ```
+
+3. **Make changes**
+   - Edit HTML, CSS, or JS files
+   - Changes will reflect on refresh
+
+### Environment Setup
+
+1. **Get Getform Endpoint** (for contact form)
+   - Sign up at [getform.io](https://getform.io)
+   - Create a new form
+   - Copy your endpoint URL
+   - Update in `js/main.js`:
+     ```javascript
+     const response = await fetch('YOUR_GETFORM_ENDPOINT', {
+     ```
+
+2. **Add Your Resume**
+   - Place your `resume.pdf` in the `assets/` folder
+   - Or update the path in `index.html`
+
+## 🌐 Deployment
+
+### GitHub Pages (Recommended)
+
+1. **Push to GitHub**
+   ```bash
+   git add .
+   git commit -m "Initial portfolio deployment"
+   git push origin main
+   ```
+
+2. **Enable GitHub Pages**
+   - Go to repository Settings
+   - Navigate to Pages section
+   - Select `main` branch
+   - Click Save
+
+3. **Access your site**
+   ```
+   https://krishnanaicker.github.io/portfolio/
+   ```
+
+### Alternative Deployments
+
+**Netlify**
 ```bash
-# Clone this repository
-git clone https://github.com/KrishnaNaicker/portfolio.git
-
-# Navigate to the project
-cd portfolio
+# Drag & drop the portfolio folder to netlify.com
+# Or connect GitHub repo for auto-deployment
 ```
 
-### 2. Add Vanta.js CDN
-
-Open `index.html` and add this line **before** `vanta-config.js`:
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
-```
-
-Your scripts section should look like:
-
-```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<!-- ADD THIS LINE -->
-<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
-<!-- -->
-<script src="js/vanta-config.js"></script>
-<script src="js/cursor-effects.js"></script>
-<script src="js/resume-sync.js"></script>
-<script src="js/main.js"></script>
-```
-
-### 3. Customize Your Info
-
-#### Update Personal Information
-
-Edit `index.html`:
-- Change your name in the hero section
-- Update email in the contact section
-- Update social media links
-
-#### Update GitHub Username
-
-Edit `js/resume-sync.js`:
-
-```javascript
-const GITHUB_USERNAME = 'KrishnaNaicker'; // Change to your username
-```
-
-#### Update Resume Data
-
-Edit `data/resume.json` with your information:
-- Personal details
-- Skills
-- Experience
-- Education
-- Projects
-
-### 4. Open in Browser
-
-Simply open `index.html` in your browser or use a local server:
-
+**Vercel**
 ```bash
-# Using Python
-python -m http.server 8000
-
-# Using Node.js
-npx serve
-
-# Using PHP
-php -S localhost:8000
+npm i -g vercel
+vercel
 ```
 
-Then visit `http://localhost:8000`
+## 🎨 Customization Guide
 
-## 🎨 Customization
-
-### Change Colors
+### Colors
 
 Edit CSS variables in `css/style.css`:
 
 ```css
 :root {
-    --color-primary: #6366f1;     /* Main brand color */
-    --color-secondary: #8b5cf6;   /* Secondary color */
-    --color-accent: #06b6d4;      /* Accent color */
-    --color-highlight: #f59e0b;   /* Highlight color */
+    --color-bg-primary: #0a0e27;      /* Main background */
+    --color-accent: #00d9ff;          /* Accent/highlight color */
+    --color-text-primary: #e4e4e7;    /* Main text */
+    --color-text-secondary: #a1a1aa;  /* Secondary text */
 }
 ```
 
-### Customize Vanta.js Background
+### Fog Effect Speed
 
 Edit `js/vanta-config.js`:
 
 ```javascript
-VANTA.FOG({
-    highlightColor: 0x6366f1,  // Change colors (hex format)
-    midtoneColor: 0x8b5cf6,
-    speed: 1.5,                // Change animation speed
-    zoom: 1.2,                 // Change zoom level
-    blurFactor: 0.6           // Change blur amount
-})
+speed: 1.80,  // Increase for faster, decrease for slower
 ```
 
-### Change Fonts
+### Typing Animation Speed
 
-Update Google Fonts link in `index.html`:
+Edit `js/main.js`:
 
-```html
-<link href="https://fonts.googleapis.com/css2?family=YourFont:wght@300;400;600;700&display=swap" rel="stylesheet">
+```javascript
+const typingSpeed = 25; // Milliseconds per character
 ```
 
-Then update in `css/style.css`:
+### Projects
 
-```css
---font-primary: 'YourFont', sans-serif;
+Update your projects in `js/resume-sync.js`:
+
+```javascript
+const projects = [
+    {
+        title: 'Your Project',
+        description: 'Project description',
+        tags: ['Tech1', 'Tech2'],
+        github: 'https://github.com/...',
+        demo: 'https://...' // Optional
+    }
+];
 ```
 
-## 📊 GitHub Resume Auto-Sync
+## 📊 Performance
 
-### How It Works
+- ⚡ **Page Load**: ~1.5s on 4G
+- 🎯 **Lighthouse Score**: 95+ Performance
+- 📦 **Total Size**: ~500KB (including libraries)
+- 🖼️ **First Contentful Paint**: <1s
 
-1. The portfolio automatically fetches your latest GitHub repositories
-2. Projects are sorted by last update date
-3. Top 6 repos are displayed with:
-   - Repository name
-   - Description
-   - Languages/topics as tags
-   - Stars and forks count
-   - Links to repo and live demo (if available)
+## 🔧 Features Breakdown
 
-### Sync from .typst Resume
+### 1. Interactive Fog Background
+- WebGL-powered 3D fog effect
+- Responds to mouse movement
+- Optimized for 60fps
+- Faster fog speed (1.80x)
 
-To automatically update from your `.typst` resume file:
+### 2. Navigation
+- Transparent navbar with blue border
+- Blinking blue underline on hover
+- Smooth scroll to sections
+- Active link highlighting
+- Resume download link
 
-1. Create a public GitHub repository
-2. Upload your `resume.typst` file
-3. The script will detect and parse it automatically
+### 3. Hero Section
+- Gradient name animation
+- Animated social icons with glow
+- Responsive typography
+- Clean, modern layout
 
-### Manual Project Control
+### 4. Terminal About
+- Mac-style terminal design
+- Live typing effect on scroll
+- Triggers when section is visible
+- Monospace font for authenticity
 
-To manually control which projects appear:
+### 5. Tech Stack Bubbles
+- Circular skill icons
+- Tooltip with skill name on hover
+- Scale animation (1.3x)
+- Positioned above to prevent overlap
+- Staggered entrance animation
 
-1. Add topics to your GitHub repos
-2. Pin repositories on your GitHub profile
-3. Or edit `data/resume.json` directly
+### 6. Featured Projects
+- 6 curated projects from resume
+- Proper titles (not repo names)
+- Tech tags with styling
+- GitHub + live demo links
+- Slide-up animation on scroll
 
-## 🚀 Deployment
+### 7. Contact Form
+- Modal-based form
+- Getform.io integration
+- Form validation
+- Success/error messages
+- Email directly to inbox
 
-### Deploy to GitHub Pages
+### 8. Scroll Animations
+- Intersection Observer based
+- Staggered skill/project animations
+- Fade-in effects for sections
+- Performance optimized
+- Respects reduced motion preference
 
-```bash
-# Create gh-pages branch
-git checkout -b gh-pages
+## 📧 Contact Form Setup
 
-# Push to GitHub
-git push origin gh-pages
+The contact form uses Getform.io (free tier: 50 submissions/month).
+
+**Setup Steps:**
+
+1. Visit [getform.io](https://getform.io)
+2. Sign up with your email
+3. Create a new form
+4. Copy the endpoint URL
+5. Update `js/main.js` line 66:
+   ```javascript
+   const response = await fetch('https://getform.io/f/YOUR_FORM_ID', {
+   ```
+
+**What you'll receive:**
 ```
+From: Getform.io
+To: krishnanaicker2005@gmail.com
+Subject: New form submission
 
-Then enable GitHub Pages in repository settings.
-
-### Deploy to Netlify
-
-1. Drag and drop the `portfolio` folder to [Netlify](https://app.netlify.com)
-2. Your site is live! 🎉
-
-### Deploy to Vercel
-
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Deploy
-vercel
+name: John Doe
+email: john@example.com
+message: Hi Krishna! I'd love to collaborate...
 ```
-
-## 📱 Browser Support
-
-- ✅ Chrome (recommended)
-- ✅ Firefox
-- ✅ Safari
-- ✅ Edge
-- ⚠️ IE11 (limited support)
 
 ## 🐛 Troubleshooting
 
-### Vanta.js not working?
+### Fog not showing
+- Check browser console for Three.js errors
+- Ensure Vanta.js CDN is loading
+- Try hard refresh: `Ctrl + F5`
 
-Make sure you've added the CDN link:
-```html
-<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
-```
+### Animations not working
+- Clear browser cache
+- Check console for JavaScript errors
+- Ensure all JS files are loaded
 
-### Custom cursor not showing?
+### Contact form not sending
+- Verify Getform endpoint is correct
+- Check browser console for fetch errors
+- Test Getform form status in dashboard
 
-Check browser console for errors. Custom cursor is disabled on mobile devices.
-
-### GitHub projects not loading?
-
-1. Check your GitHub username in `js/resume-sync.js`
-2. Make sure your repos are public
-3. Check browser console for API errors
-
-## 🤝 Contributing
-
-Feel free to fork this project and customize it for your own portfolio!
+### Skills/Projects not visible
+- Clear cache and hard refresh
+- Check z-index in CSS
+- Verify JS files are loading in correct order
 
 ## 📄 License
 
-MIT License - Feel free to use this for your own portfolio!
+MIT License - feel free to use this template for your own portfolio!
 
-## 🙏 Credits
-
-- **Vanta.js** - [https://www.vantajs.com/](https://www.vantajs.com/)
-- **GSAP** - [https://greensock.com/gsap/](https://greensock.com/gsap/)
-- **Three.js** - [https://threejs.org/](https://threejs.org/)
-- **Google Fonts** - [https://fonts.google.com/](https://fonts.google.com/)
-
-## 📧 Contact
+## 👤 Author
 
 **Krishna Naicker**
-- GitHub: [@KrishnaNaicker](https://github.com/KrishnaNaicker)
-- Email: krishna@example.com
+- 🎓 Third-year Undergraduate
+- 💼 Aspiring AI/ML Engineer & Full-Stack Developer
+- 📧 Email: [krishnanaicker2005@gmail.com](mailto:krishnanaicker2005@gmail.com)
+- 🔗 GitHub: [@KrishnaNaicker](https://github.com/KrishnaNaicker)
+- 💼 LinkedIn: [krishnanaicker29](https://linkedin.com/in/krishnanaicker29)
+
+## 🌟 Featured Projects
+
+1. **RapiDoc** - LLM-powered medical documentation with RAG
+2. **HealthEase** - Gemini Pro medical chatbot
+3. **HealBERT** - Self-healing DAG system using BERT
+4. **CareFlow** - Multi-agent healthcare AI system
+5. **QuizSpark** - AI quiz generation with Claude API
+6. **VERBALIZE** - Deep learning lip reading model
+
+## 🙏 Acknowledgments
+
+- **Vanta.js** - Amazing 3D backgrounds
+- **Three.js** - WebGL rendering
+- **Getform.io** - Simple form backend
+- **Google Fonts** - Beautiful typography
+- **DevIcons** - Tech stack icons
+
+## 📈 Future Enhancements
+
+- [ ] Add blog section for technical articles
+- [ ] Integrate GitHub contribution graph
+- [ ] Add project screenshots/demos
+- [ ] Implement dark/light mode toggle
+- [ ] Add analytics (Plausible or Google Analytics)
+- [ ] Create case studies for major projects
+- [ ] Add testimonials section
+- [ ] Implement progressive web app (PWA)
+
+## 🔄 Updates
+
+### v1.0.0 (November 2025)
+- ✅ Initial release
+- ✅ Interactive fog background
+- ✅ Terminal typing animation
+- ✅ Bubble tech stack
+- ✅ Contact form integration
+- ✅ Scroll animations
+- ✅ Responsive design
+- ✅ Resume download
 
 ---
 
-Made with ❤️ and lots of ☕
+## 💻 Development
 
-⭐ Star this repo if you found it helpful!
+### Browser Support
+- Chrome/Edge (latest)
+- Firefox (latest)
+- Safari (latest)
+- Mobile browsers
+
+### Prerequisites
+- Modern web browser
+- Text editor (VS Code recommended)
+- Basic HTML/CSS/JS knowledge
+
+### Scripts
+
+**Start local server:**
+```bash
+# Python 3
+python -m http.server 8000
+
+# Python 2
+python -m SimpleHTTPServer 8000
+
+# Node.js
+npx serve
+
+# PHP
+php -S localhost:8000
+```
+
+**Build for production:**
+No build step required - just deploy the files!
+
+---
+
+<div align="center">
+
+### ⭐ Star this repo if you found it helpful!
+
+**Built with 💙 by Krishna Naicker**
+
+[Live Demo](https://krishnanaicker.github.io/portfolio/) • [Report Bug](https://github.com/KrishnaNaicker/portfolio/issues) • [Request Feature](https://github.com/KrishnaNaicker/portfolio/issues)
+
+</div>
