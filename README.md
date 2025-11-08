@@ -259,7 +259,7 @@ Subject: New form submission
 
 name: John Doe
 email: john@example.com
-message: Hi Krishna! I'd love to collaborate...
+message: Hi Krishna! I'd love to collaborate.....
 ```
 
 ## 🐛 Troubleshooting
