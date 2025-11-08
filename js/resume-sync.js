@@ -25,7 +25,7 @@
             title: 'CareFlow',
             description: 'Multi-agent AI system for healthcare workflows using LangGraph.',
             tags: ['Python', 'LangGraph', 'GroqAPI', 'CrewAI'],
-            github: 'https://github.com/KrishnaNaicker/health-ai-agents',
+            github: 'https://github.com/KrishnaNaicker/healthcare-ai-agents',
             demo: null
         },
         {
