@@ -30,7 +30,7 @@
         },
         {
             title: 'QuizSpark',
-            description: 'AI-powered quiz generation platform using Claude API.',
+            description: 'AI-powered quiz generation platform with adaptive difficulty.',
             tags: ['HTML5', 'CSS3', 'JavaScript', 'OpenTriviaDB'],
             github: 'https://github.com/KrishnaNaicker/QuizSpark',
             demo: 'https://quiz-spark-eight.vercel.app'
