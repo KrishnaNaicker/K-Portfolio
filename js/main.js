@@ -373,9 +373,6 @@ function isInViewport(element) {
 // ============================================
 // TERMINAL TYPING EFFECT
 // ============================================
-// ============================================
-// TERMINAL TYPING - ULTRA SMOOTH VERSION
-// ============================================
 function initTerminalTyping() {
     const terminalOutput = document.querySelector('.terminal-output');
     
@@ -447,7 +444,8 @@ function initTerminalTyping() {
         console.log('✅ Terminal typing initialized');
     }
 }
-
+// Auto-update footer year
+document.getElementById('year').textContent = new Date().getFullYear();
 // ============================================
 // CONSOLE WELCOME MESSAGE
 // ============================================
